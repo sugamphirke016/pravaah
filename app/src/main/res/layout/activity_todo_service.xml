@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".services.TodoService">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="740dp"
+        android:id="@+id/frame_layout" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomAppBar"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/ripple_todo_logo"
+        app:navigationIconTint="@color/black"
+        app:fabCradleMargin="10dp"
+        app:titleTextColor="@color/black"
+        app:fabCradleRoundedCornerRadius="50dp" >
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomNavigationView"
+            android:layout_marginEnd="20dp"
+            app:labelVisibilityMode="labeled"
+            app:itemIconTint="@color/black"
+            app:itemTextColor="@color/black"
+            android:background="@color/ripple_todo_logo"
+            app:menu="@menu/bottom_menu" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E9EDF5"
+        android:src="@drawable/baseline_add_24"
+        app:layout_anchor="@id/bottomAppBar"
+        app:maxImageSize="40dp"
+        android:tint="#FDF3B5" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

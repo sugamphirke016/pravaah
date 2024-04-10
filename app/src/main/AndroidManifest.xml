@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Pravaah"
+        tools:targetApi="31">
+        <activity
+            android:name=".services.UpdateTask"
+            android:exported="false" />
+        <activity
+            android:name=".services.CreateTaskFragment"
+            android:exported="false" />
+        <activity
+            android:name=".services.TodoService"
+            android:exported="false" />
+        <activity
+            android:name=".services.splashes.WishlistSplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".services.splashes.ContactsbookSplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".services.splashes.VaultSplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".services.splashes.HealthtrackSplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".services.splashes.FinanceSplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".services.splashes.TodoSplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".services.WishlistService"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".services.ContactsBookService"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".services.VaultService"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".services.HealthtrackService"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".services.FinanceService"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".FingerPrintAuth"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".SplashSupplierScreen"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

@@ -1,0 +1,7 @@
+Workflow of Pravaah:
+SplashSupplierScreen - activity_splash_supplier_screen
+                            |
+    FingerPrintAuth - activity_finger_print_auth
+                            |
+            MainAcitivity - activity_main
+                            |

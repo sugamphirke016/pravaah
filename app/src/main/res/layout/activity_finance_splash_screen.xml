@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".services.splashes.FinanceSplashScreen">
+
+    <com.skyfishjy.library.RippleBackground
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ripple_animation"
+        app:rb_color="@color/ripple_finance_logo"
+        app:rb_rippleAmount="6"
+        app:rb_duration="1500"
+        app:rb_scale="2"
+        app:rb_radius="48dp" >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/image"
+            android:src="@drawable/finance_logo" />
+
+    </com.skyfishjy.library.RippleBackground>
+
+</RelativeLayout>

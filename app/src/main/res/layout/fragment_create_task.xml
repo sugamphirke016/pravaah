@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".services.CreateTaskFragment">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/add_task_todo_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add task..."
+            android:textStyle="bold"
+            android:textColor="@color/ripple_todo_logo"
+            android:textSize="40sp"
+            android:layout_weight="1"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"/>
+
+            <ImageButton
+                android:id="@+id/closeBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_close_24"
+                android:backgroundTint="@color/black"
+                android:scaleType="centerCrop"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/micButtonForTitle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <EditText
+                    android:id="@+id/editTextTaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/AshGray"
+                    android:hint="Task Title"
+                    android:padding="10dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/micButtonForTitle"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_mic_24"
+                android:background="@color/Black"
+                android:scaleType="fitCenter"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="13dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/micButtonForDesc"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <EditText
+            android:id="@+id/editTextTaskDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Task Description"
+            android:layout_marginTop="8dp"
+            android:textColorHint="@color/AshGray"
+            android:textColor="@color/white"
+            android:padding="10dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/micButtonForDesc"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_mic_24"
+                android:background="@color/Black"
+                android:scaleType="fitCenter"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="13dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/editTextStartDate"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:hint="Start Date"
+                android:textColorHint="#a9a9a9"
+                android:textColor="@color/white"
+                android:background="@drawable/form_fields_bg"
+                android:padding="10dp"/>
+
+            <ImageButton
+                android:id="@+id/buttonStartDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_calendar_month_24"
+                android:backgroundTint="@color/black"/>
+
+            <TextView
+                android:id="@+id/editTextDueDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Due Date"
+                android:textColorHint="#a9a9a9"
+                android:textColor="@color/white"
+                android:background="@drawable/form_fields_bg"
+                android:padding="10dp" />
+
+            <ImageButton
+                android:id="@+id/buttonDueDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_calendar_month_24"
+                android:backgroundTint="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/editTextStartTime"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:hint="Start Time"
+                android:textColorHint="#a9a9a9"
+                android:textColor="@color/white"
+                android:background="@drawable/form_fields_bg"
+                android:padding="10dp" />
+
+            <ImageButton
+                android:id="@+id/buttonStartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_access_time_24"
+                android:backgroundTint="@color/black"/>
+
+            <TextView
+                android:id="@+id/editTextEndTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="End Time"
+                android:textColorHint="#a9a9a9"
+                android:textColor="@color/white"
+                android:background="@drawable/form_fields_bg"
+                android:padding="10dp" />
+
+            <ImageButton
+                android:id="@+id/buttonEndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_access_time_24"
+                android:backgroundTint="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal" >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Label"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_field_label"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Priority"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_field_priority"
+                android:layout_width="179dp"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal" >
+
+            <CheckBox
+                android:id="@+id/checkBoxDaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set this task"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:buttonTint="@color/ripple_todo_logo"
+                android:padding="3dp"
+                android:layout_marginLeft="20dp"/>
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="-6dp" />
+
+            <ImageButton
+                android:id="@+id/alarmButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/baseline_alarm_on_24"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/notifications_taskcard"
+                android:padding="5dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginRight="5dp" />
+
+            <ImageButton
+                android:id="@+id/notifyButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/baseline_notifications_active_24"
+                android:background="@drawable/notifications_taskcard"
+                android:padding="5dp"
+                android:layout_marginTop="17dp" />
+        </LinearLayout>
+        
+        <Button
+            android:id="@+id/buttonAddTask"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Add Task"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/status_taskcard_upcoming"
+            app:backgroundTint="@color/ripple_todo_logo"
+            android:textColor="@color/Black"
+            android:layout_marginBottom="40dp"/>
+    </LinearLayout>
+
+</FrameLayout>

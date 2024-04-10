@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="fingerPrintScr_colorPrimary">#457fca</color>
+    <color name="fingerPrintScr_colorPrimaryDark">#457fca</color>
+    <color name="fingerPrintScr_colorAccent">#5691c8</color>
+
+<!--White Shades-->
+    <color name="White">#FFFFFF</color>
+    <color name="Pearl">#FBFCF8</color>
+    <color name="Alabaster">#FEF9F3</color>
+    <color name="Snow">#F5FEFD</color>
+    <color name="Ivory">#FDF6E4</color>
+    <color name="Cream">#FFFADA</color>
+    <color name="EggShell">#FFF9E3</color>
+    <color name="Cotton">#FBFBF9</color>
+    <color name="Chiffon">#FBFAF2</color>
+    <color name="Salt">#F8EEEC</color>
+    <color name="Lace">#F8F2ED</color>
+    <color name="Coconut">#FFF1E6</color>
+    <color name="Linen">#F3EAD3</color>
+    <color name="Bone">#E7DECC</color>
+    <color name="Daisy">#FBFCFA</color>
+    <color name="Powder">#FFFFFF</color>
+    <color name="Frost">#FCFBFC</color>
+    <color name="Porcelain">#FFFEFC</color>
+    <color name="Parchment">#FBF5DF</color>
+    <color name="Rice">#FAF5EF</color>
+
+<!--Black Shades-->
+    <color name="Black">#000000</color>
+    <color name="Ebony">#080402</color>
+    <color name="Crow">#28231D</color>
+    <color name="Charcoal">#333333</color>
+    <color name="Midnight">#040406</color>
+    <color name="Ink">#070504</color>
+    <color name="Raven">#050301</color>
+    <color name="Oil">#050100</color>
+    <color name="Grease">#000806</color>
+    <color name="Onyx">#030104</color>
+    <color name="Pitch">#030001</color>
+    <color name="Soot">#160D08</color>
+    <color name="Sable">#000908</color>
+    <color name="JetBlack">#0A0A0A</color>
+    <color name="Coal">#121212</color>
+    <color name="Metal">#1C1C1C</color>
+    <color name="Jade">#000302</color>
+    <color name="Spider">#040200</color>
+    <color name="Leather">#080705</color>
+
+    <color name="GrayWolf">#504A4B</color>
+    <color name="AshGray">#666362</color>
+
+    <color name="MillenialPink">#ffd1dc</color>
+
+    <color name="Underline">#D8D6D6</color>
+
+    <color name="ripple_todo_logo">#FABA35</color>
+    <color name="ripple_finance_logo">#504A4B</color>
+    <color name="ripple_vault_logo">#DADDE4</color>
+    <color name="ripple_healthtrack_logo">#FFFFFF</color>
+    <color name="ripple_contactsbook_logo">#FE5722</color>
+    <color name="ripple_wishlist_logo">#F7EDBC</color>
+    <color name="Green">#008000</color>
+    <color name="skyBlue">#0096FF</color>
+
+</resources>
