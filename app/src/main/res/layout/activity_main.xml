@@ -309,7 +309,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/antic"
-                    android:text="Wishlist"
+                    android:text="Memories"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />

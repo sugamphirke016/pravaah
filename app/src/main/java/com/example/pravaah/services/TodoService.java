@@ -1,7 +1,5 @@
 package com.example.pravaah.services;
 
-import static com.google.android.material.internal.ContextUtils.getActivity;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -9,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -20,7 +17,6 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -36,12 +32,12 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.pravaah.HomeFragment;
 import com.example.pravaah.R;
 import com.example.pravaah.databinding.ActivityTodoServiceBinding;
 import com.example.pravaah.services.dataModel.CreateTaskFormModel;
 import com.example.pravaah.services.retrofit.ApiService;
 import com.example.pravaah.services.retrofit.RetrofitClient;
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -70,7 +66,6 @@ public class TodoService extends AppCompatActivity {
         binding = ActivityTodoServiceBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         replaceFragment(new HomeFragment());
         binding.bottomNavigationView.setBackground(null);
 
@@ -78,8 +73,8 @@ public class TodoService extends AppCompatActivity {
             int id=item.getItemId();
 
             if(id == R.id.home) { replaceFragment(new HomeFragment()); }
+            else if(id == R.id.tasks) { replaceFragment(new TasksFragment()); }
             else if(id == R.id.pomodoro) { replaceFragment(new PomodoroFragment()); }
-            else if(id == R.id.schedule) { replaceFragment(new SchedulerFragment()); }
             else if(id == R.id.habit) { replaceFragment(new HabitFragment()); }
             return true;
         });
@@ -93,7 +88,7 @@ public class TodoService extends AppCompatActivity {
 
     }
 
-    private void replaceFragment(Fragment fragment) {
+    public void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment);
@@ -146,7 +141,7 @@ public class TodoService extends AppCompatActivity {
                 Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Converting your voice to text");
+                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Pravaah is listening... You can speak now!");
                 try{
                     startActivityForResult(intent, REQUEST_CODE_SPEECH_INPUT);
                 }
@@ -163,7 +158,7 @@ public class TodoService extends AppCompatActivity {
                 Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Converting your voice to text");
+                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Pravaah is listening... You can speak now!");
                 try {
                     startActivityForResult(intent, REQUEST_CODE_SPEECH_INPUT_DESC);
                 } catch(Exception e) {

@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.pravaah.R;
 
-public class WishlistService extends AppCompatActivity {
+public class MemoriesService extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wishlist_service);
+        setContentView(R.layout.activity_memories_service);
     }
 }

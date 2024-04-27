@@ -5,18 +5,20 @@
         android:title="Home"
         android:icon="@drawable/baseline_home_24"/>
     <item
+        android:id="@+id/tasks"
+        android:title="Tasks"
+        android:icon="@drawable/baseline_tasks_24"/>
+
+    <item
+        android:title="" />
+
+    <item
         android:id="@+id/pomodoro"
         android:title="Pomodoro"
         android:icon="@drawable/baseline_pomodoro_24"/>
-    <item
-        android:title="" />
-    <item
-        android:id="@+id/schedule"
-        android:title="Schedule"
-        android:icon="@drawable/baseline_schedule_24"/>
 
     <item
         android:id="@+id/habit"
-        android:title="Habits"
+        android:title="Schedule"
         android:icon="@drawable/baseline_habit_24"/>
 </menu>

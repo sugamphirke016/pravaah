@@ -1,17 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDF3B5"
-    tools:context=".services.PomodoroFragment">
-
+    android:background="@color/black"
+    tools:context=".services.PomodoroFragment" >
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Pomodoro"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/black"/>
+        android:id="@+id/tagline_pomodoro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conquer your toughest tasks with"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/antic"
+        android:textStyle="bold"
+        android:textColor="@color/White" />
+    <TextView
+        android:id="@+id/pomodoro_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee"
+        android:text="POMODORO"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="30dp"
+        android:textSize="53.5sp"
+        android:includeFontPadding="false"
+        android:textColor="@color/white" />
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginStart="30dp" >
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/progress_Bar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/dashed_circle"
+            android:textAlignment="center" />
+        <ProgressBar
+            android:id="@+id/progress_Bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/circle_shape"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circle_progress_bar_pomodoro"
+            android:textAlignment="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_laps"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="false"
+            android:gravity="center"
+            android:text="1"
+            android:layout_marginTop="28dp"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_status"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:gravity="center"
+            android:background="@drawable/bg_todo_banner"
+            android:text="FOCUS"
+            android:layout_marginTop="50dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/antic"
+            android:textStyle="bold"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_countdown_timer"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="25:00"
+            android:textColor="#ffffff"
+            android:textSize="38sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_text"
+            android:layout_marginTop="130dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="false"
+            android:gravity="center"
+            android:text="0%"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="200dp" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <ImageButton
+                android:id="@+id/startBtn"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_play_circle_filled"
+                android:scaleType="fitCenter"
+                android:background="@drawable/pomodoro_btn_bg" />
+            <ImageButton
+                android:id="@+id/resetBtn"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_replay_circle_filled"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/pomodoro_reset_btn_bg" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp" >
+            <ImageButton
+                android:id="@+id/exitBtn"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_close_black"
+                android:layout_margin="5dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/pomodoro_close_btn_bg" />
+            <ImageButton
+                android:id="@+id/completedBtn"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/baseline_done"
+                android:background="@drawable/pomodoro_complete_btn_bg" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="30dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Title"
+            android:textColor="@color/white"
+            android:fontFamily="@font/antic"
+            android:textSize="20sp"
+            android:padding="7dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Description"
+            android:textColor="@color/white"
+            android:fontFamily="@font/antic"
+            android:textSize="20sp"
+            android:padding="7dp" />
+    </LinearLayout>
 
 </FrameLayout>

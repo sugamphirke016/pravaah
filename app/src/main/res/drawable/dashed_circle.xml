@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape android:shape="oval"
+    android:useLevel="false"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:thickness="0dp">
+    <stroke
+        android:color="@color/ripple_todo_logo"
+        android:dashWidth="5px"
+        android:dashGap="10px"
+        android:width="35px"/>
+    <size
+        android:width="15dp"
+        android:height="15dp"/>
+</shape>
+

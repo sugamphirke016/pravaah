@@ -77,5 +77,6 @@ public class FingerPrintAuth extends AppCompatActivity {
                 biometricPrompt.authenticate(promptInfo);
             }
         });
+        biometricPrompt.authenticate(promptInfo);
     }
 }

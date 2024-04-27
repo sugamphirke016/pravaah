@@ -56,7 +56,7 @@
                 android:background="@drawable/bg_todo_banner"
                 android:textColor= "@color/Black"
                 android:paddingLeft="7dp"
-                android:paddingRight="10dp"/>
+                android:paddingRight="7dp"/>
 
             <TextView
                 android:id="@+id/category"
@@ -69,7 +69,7 @@
                 android:background="@drawable/bg_todo_banner"
                 android:textColor= "@color/Black"
                 android:paddingLeft="7dp"
-                android:paddingRight="10dp"/>
+                android:paddingRight="7dp"/>
 
             <TextView
                 android:id="@+id/priority"
@@ -130,6 +130,7 @@
                 android:textColor="@color/black" />
 
             <ImageButton
+                android:id="@+id/pomodoro_taskcard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_pomodoro_24"

@@ -45,7 +45,7 @@
             android:name=".services.splashes.TodoSplashScreen"
             android:exported="false" />
         <activity
-            android:name=".services.WishlistService"
+            android:name=".services.MemoriesService"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity

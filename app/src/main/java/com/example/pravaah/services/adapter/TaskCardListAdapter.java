@@ -1,5 +1,7 @@
 package com.example.pravaah.services.adapter;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -21,8 +23,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.pravaah.R;
+import com.example.pravaah.services.PomodoroFragment;
+import com.example.pravaah.services.TodoService;
 import com.example.pravaah.services.UpdateTask;
 import com.example.pravaah.services.UpdateTaskListener;
 import com.example.pravaah.services.dataModel.TaskCardModel;
@@ -45,7 +51,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TaskCardListAdapter extends RecyclerView.Adapter<TaskCardListAdapter.ViewHolder> {
-    private UpdateTaskListener updateTaskListener;
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView taskTitle;
@@ -62,6 +67,7 @@ public class TaskCardListAdapter extends RecyclerView.Adapter<TaskCardListAdapte
         public LinearLayout multiDayExtension;
         public TextView multiDayStartnEndDateTV;
         public ProgressBar progress_barEXT;
+        public ImageButton pomodoro_taskcard;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -79,6 +85,7 @@ public class TaskCardListAdapter extends RecyclerView.Adapter<TaskCardListAdapte
             multiDayExtension = itemView.findViewById(R.id.multiDayExtension);
             multiDayStartnEndDateTV = (TextView) itemView.findViewById(R.id.multiDayStartnEndDateTV);
             progress_barEXT = itemView.findViewById(R.id.progress_barEXT);
+            pomodoro_taskcard = itemView.findViewById(R.id.pomodoro_taskcard);
         }
     }
     private Context context;
@@ -132,6 +139,13 @@ public class TaskCardListAdapter extends RecyclerView.Adapter<TaskCardListAdapte
                 showMenu(view,  holder.getAdapterPosition());
             }
         });
+        holder.pomodoro_taskcard.setOnClickListener(new View.OnClickListener() {         // yet to resolve errors for this
+            @Override
+            public void onClick(View view) {
+                TodoService todoService = new TodoService();
+                todoService.replaceFragment(new PomodoroFragment());
+            }
+        });
         holder.taskId.setText(taskCardModel.getTask_id());
         holder.taskStatus.setText(taskCardModel.getStatus());
         if ("Completed".equals(taskCardModel.getStatus())) {
@@ -162,6 +176,12 @@ public class TaskCardListAdapter extends RecyclerView.Adapter<TaskCardListAdapte
             String end_time = taskCardModel.getEnd_time();
             LocalDateTime startDateTime = LocalDateTime.parse(start_date + " " + start_time, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
             LocalDateTime endDateTime = LocalDateTime.parse(due_date + " " + end_time, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+            String check1 = start_date + " " + start_time;
+            String check2 = due_date + " " + end_time;
+            Log.i("check1", check1);
+            Log.i("check2", check2);
+            Log.i("check1.length", ""+check1.length());
+            Log.i("check2.length", ""+check2.length());
             long totalMinutes = Duration.between(startDateTime, endDateTime).toMinutes();
             ZoneId istZoneId = ZoneId.of("Asia/Kolkata");
             ZonedDateTime currentIST = ZonedDateTime.now(istZoneId);
@@ -171,14 +191,13 @@ public class TaskCardListAdapter extends RecyclerView.Adapter<TaskCardListAdapte
         } else {
             holder.multiDayExtension.setVisibility(View.GONE);
         }
-    }
 
+    }
     private String getMonthName(int month) {
         String[] monthNames = {"Jan", "Feb", "March", "April", "May", "June",
                 "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
         return monthNames[month - 1];
     }
-
     private void toggleAlarmImage(final ImageButton imageButton, final int imageResource1, final int imageResource2, final String task_id, final String typeBtn, final String column_name, final String state) {
         imageButton.setOnClickListener(new View.OnClickListener() {
             boolean isImage1 = Objects.equals(state, "1");
@@ -231,9 +250,6 @@ public class TaskCardListAdapter extends RecyclerView.Adapter<TaskCardListAdapte
             }
         });
     }
-
-    private TaskCardListAdapter adapter;
-
     @Override
     public int getItemCount() {
         return taskCards.size();
@@ -286,43 +302,6 @@ public class TaskCardListAdapter extends RecyclerView.Adapter<TaskCardListAdapte
         if(Objects.equals(taskCards.get(adapterPosition).getStatus(), "In Progress")) startStopMenuItem.setTitle("Stop Task");
         else startStopMenuItem.setTitle("Start Task");
         popupMenu.show();
-    }
-
-    private String formatTitle(String inputText) {
-        StringBuilder formattedText = new StringBuilder();
-        boolean capitalizeNext = true;
-        for (char c : inputText.toCharArray()) {
-            if (capitalizeNext && Character.isLetter(c)) {
-                formattedText.append(Character.toUpperCase(c));
-                capitalizeNext = false;
-            } else {
-                formattedText.append(c);
-            }
-            if (c == '.' || c == '?' || c == '!') {
-                capitalizeNext = true;
-            }
-        }
-        return formattedText.toString();
-    }
-
-    private String formatDesc(String inputText) {
-        StringBuilder formattedText = new StringBuilder();
-        boolean capitalizeNext = true;
-        for (char c : inputText.toCharArray()) {
-            if (capitalizeNext && Character.isLetter(c)) {
-                formattedText.append(Character.toUpperCase(c));
-                capitalizeNext = false;
-            } else {
-                formattedText.append(c);
-            }
-            if (c == '.' || c == '?' || c == '!') {
-                capitalizeNext = true;
-            }
-        }
-        if (!inputText.endsWith(".") && !inputText.endsWith("?") && !inputText.endsWith("!")) {
-            formattedText.append(".");
-        }
-        return formattedText.toString();
     }
 
     private void startTask(String task_id) {

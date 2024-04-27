@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.example.pravaah.R;
+import com.example.pravaah.services.MemoriesService;
 import com.skyfishjy.library.RippleBackground;
 
 public class WishlistSplashScreen extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class WishlistSplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wishlist_splash_screen);
+        setContentView(R.layout.activity_memories_splash_screen);
 
         mimage = findViewById(R.id.image);
 
@@ -29,7 +30,7 @@ public class WishlistSplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){
-                Intent intent = new Intent(WishlistSplashScreen.this, com.example.pravaah.services.WishlistService.class);
+                Intent intent = new Intent(WishlistSplashScreen.this, MemoriesService.class);
                 startActivity(intent);
                 finish();
             }
